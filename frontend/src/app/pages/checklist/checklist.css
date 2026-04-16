@@ -1,0 +1,165 @@
+.checklist-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header-card {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.header-card mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.section-card {
+  margin-bottom: 20px;
+}
+
+.impeditivo-card {
+  border: 2px solid #ff9800;
+  background: #fff3e0;
+}
+
+.impeditivo-card mat-card-title {
+  color: #ff6f00;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.item-row:last-child {
+  border-bottom: none;
+}
+
+.impeditivo-row {
+  background: #fff8e1;
+}
+
+.item-label {
+  flex: 1;
+  min-width: 200px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-number {
+  color: #1976d2;
+  font-weight: bold;
+  min-width: 25px;
+}
+
+.warning-icon {
+  color: #f44336;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.item-radio-group {
+  display: flex;
+  gap: 16px;
+}
+
+.item-observacao {
+  flex: 1;
+  min-width: 300px;
+}
+
+.alert-card {
+  background: #ffebee;
+  border: 2px solid #f44336;
+  margin-bottom: 20px;
+}
+
+.alert-content {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.alert-content mat-icon {
+  color: #f44336;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.alert-content strong {
+  color: #c62828;
+  font-size: 18px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.btn-save {
+  min-width: 200px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.btn-save mat-icon {
+  margin-right: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .item-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .item-radio-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .item-observacao {
+    width: 100%;
+  }
+}

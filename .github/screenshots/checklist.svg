@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="900" height="680">
+  <defs>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="680" fill="#F8F9FA"/>
+
+  <!-- Browser chrome -->
+  <rect x="40" y="10" width="820" height="660" rx="12" fill="white" filter="url(#shadow2)"/>
+  <rect x="40" y="10" width="820" height="44" rx="12" fill="#F1F3F5"/>
+  <rect x="40" y="42" width="820" height="12" fill="#F1F3F5"/>
+  <circle cx="68" cy="32" r="6" fill="#FF5F57"/>
+  <circle cx="88" cy="32" r="6" fill="#FFBD2E"/>
+  <circle cx="108" cy="32" r="6" fill="#28C840"/>
+  <rect x="200" y="21" width="380" height="22" rx="11" fill="white"/>
+  <text x="390" y="36" font-family="Arial, sans-serif" font-size="12" fill="#6C757D" text-anchor="middle">localhost/checklist</text>
+
+  <!-- Page content -->
+  <rect x="40" y="54" width="820" height="616" fill="#F8F9FA"/>
+
+  <!-- Container -->
+  <rect x="80" y="66" width="740" height="594" rx="0" fill="#F8F9FA"/>
+
+  <!-- Header card -->
+  <rect x="80" y="70" width="740" height="60" rx="8" fill="white" filter="url(#shadow2)"/>
+  <text x="100" y="96" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529">Checklist de Empilhadeiras</text>
+  <text x="100" y="114" font-family="Arial, sans-serif" font-size="12" fill="#6C757D">Operador: João da Silva (OPR001)</text>
+  <!-- Logout button -->
+  <rect x="790" y="80" width="20" height="20" rx="10" fill="#F8F9FA"/>
+  <text x="800" y="94" font-family="Arial, sans-serif" font-size="13" fill="#6C757D" text-anchor="middle">⏻</text>
+
+  <!-- Section 1: Empilhadeira -->
+  <rect x="80" y="142" width="740" height="80" rx="8" fill="white" filter="url(#shadow2)"/>
+  <text x="100" y="164" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#212529">1. Empilhadeira</text>
+  <rect x="96" y="172" width="700" height="36" rx="4" fill="white" stroke="#1976D2" stroke-width="1.5"/>
+  <text x="112" y="195" font-family="Arial, sans-serif" font-size="12" fill="#212529">YALE GP030 - Elétrica (3000t)</text>
+  <text x="774" y="195" font-family="Arial, sans-serif" font-size="12" fill="#6C757D" text-anchor="end">▼</text>
+
+  <!-- Section 2: Dados da Vistoria -->
+  <rect x="80" y="236" width="740" height="104" rx="8" fill="white" filter="url(#shadow2)"/>
+  <text x="100" y="258" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#212529">2. Dados da Vistoria</text>
+  <!-- Fields row 1 -->
+  <rect x="96" y="266" width="218" height="34" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="106" y="279" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">Data</text>
+  <text x="106" y="292" font-family="Arial, sans-serif" font-size="11" fill="#212529">2026-04-03</text>
+  <rect x="324" y="266" width="218" height="34" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="334" y="279" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">Hora</text>
+  <text x="334" y="292" font-family="Arial, sans-serif" font-size="11" fill="#212529">07:30:00</text>
+  <rect x="552" y="266" width="244" height="34" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="562" y="279" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">Turno</text>
+  <text x="562" y="292" font-family="Arial, sans-serif" font-size="11" fill="#212529">Turno A - Manhã</text>
+  <!-- Fields row 2 -->
+  <rect x="96" y="308" width="330" height="24" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="106" y="322" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">Horímetro Inicial</text>
+  <text x="260" y="322" font-family="Arial, sans-serif" font-size="11" fill="#212529">1250</text>
+  <rect x="436" y="308" width="360" height="24" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="446" y="322" font-family="Arial, sans-serif" font-size="10" fill="#1976D2">Horímetro Final (opcional)</text>
+
+  <!-- Section 3: Itens Conformes -->
+  <rect x="80" y="354" width="740" height="140" rx="8" fill="white" filter="url(#shadow2)"/>
+  <text x="100" y="376" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#212529">3. Itens Conformes</text>
+  <text x="100" y="392" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Itens que não bloqueiam a operação</text>
+
+  <!-- Item rows -->
+  <line x1="96" y1="404" x2="808" y2="404" stroke="#F1F3F5" stroke-width="1"/>
+  <!-- Item 1 -->
+  <text x="100" y="421" font-family="Arial, sans-serif" font-size="12" fill="#212529">1. Gotejamento</text>
+  <circle cx="680" cy="418" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="418" r="3" fill="#1976D2"/>
+  <text x="692" y="422" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+  <circle cx="734" cy="418" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="746" y="422" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Não Conforme</text>
+  <line x1="96" y1="432" x2="808" y2="432" stroke="#F1F3F5" stroke-width="1"/>
+  <!-- Item 2 -->
+  <text x="100" y="449" font-family="Arial, sans-serif" font-size="12" fill="#212529">2. Pneus dianteiro</text>
+  <circle cx="680" cy="446" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="446" r="3" fill="#1976D2"/>
+  <text x="692" y="450" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+  <circle cx="734" cy="446" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="746" y="450" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Não Conforme</text>
+  <line x1="96" y1="460" x2="808" y2="460" stroke="#F1F3F5" stroke-width="1"/>
+  <!-- Item 3 -->
+  <text x="100" y="477" font-family="Arial, sans-serif" font-size="12" fill="#212529">3. Garfos</text>
+  <circle cx="680" cy="474" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="474" r="3" fill="#1976D2"/>
+  <text x="692" y="478" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+  <circle cx="734" cy="474" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="746" y="478" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Não Conforme</text>
+
+  <!-- Section 4: Impeditivos (orange border) -->
+  <rect x="80" y="506" width="740" height="104" rx="8" fill="#FFF8E7" stroke="#FF9800" stroke-width="2"/>
+  <text x="100" y="528" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#E65100">4. Itens Impeditivos ⚠️</text>
+  <text x="100" y="544" font-family="Arial, sans-serif" font-size="11" fill="#F57C00">🚫 Item não conforme BLOQUEIA a empilhadeira</text>
+  <line x1="96" y1="554" x2="808" y2="554" stroke="#FFE0B2" stroke-width="1"/>
+  <!-- Impeditivo item 1 -->
+  <rect x="96" y="558" width="710" height="26" rx="4" fill="#FFF3E0"/>
+  <text x="100" y="575" font-family="Arial, sans-serif" font-size="12" fill="#212529">1. Direção</text>
+  <circle cx="680" cy="571" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="571" r="3" fill="#1976D2"/>
+  <text x="692" y="575" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+  <circle cx="734" cy="571" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="746" y="575" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Não Conforme</text>
+  <line x1="96" y1="588" x2="808" y2="588" stroke="#FFE0B2" stroke-width="1"/>
+  <!-- Impeditivo item 2 -->
+  <text x="100" y="605" font-family="Arial, sans-serif" font-size="12" fill="#212529">2. Cinto de segurança</text>
+  <circle cx="680" cy="601" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="601" r="3" fill="#1976D2"/>
+  <text x="692" y="605" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+  <circle cx="734" cy="601" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="746" y="605" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Não Conforme</text>
+
+  <!-- Save button -->
+  <rect x="325" y="624" width="250" height="44" rx="4" fill="#1976D2"/>
+  <text x="346" y="650" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white">💾  Salvar Checklist</text>
+
+  <text x="450" y="672" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">Formulário de Checklist — Sistema de Checklist de Empilhadeiras</text>
+</svg>

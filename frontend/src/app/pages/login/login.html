@@ -1,0 +1,69 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <!-- LOGO -->
+    <div class="logo-container">
+      <video #logoVideo class="logo-animada" muted playsinline preload="auto">
+        <source src="/logo/0127.webm" type="video/webm" />
+      </video>
+    </div>
+
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Sistema de Checklist de Empilhadeiras</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <!-- RE -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>RE</mat-label>
+          <input 
+            matInput 
+            formControlName="re" 
+            #reInput
+            (keydown.enter)="irParaSenha()" 
+            placeholder="Digite seu RE"
+            autocomplete="username"
+          />
+          <mat-error *ngIf="loginForm.get('re')?.hasError('required')">
+            RE é obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Senha -->
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Senha</mat-label>
+          <input
+            matInput
+            type="password"
+            formControlName="senha"
+            #senhaInput
+            (keydown.enter)="irParaEntrar()"
+            placeholder="Digite sua senha"
+            autocomplete="current-password"
+          />
+          <mat-error *ngIf="loginForm.get('senha')?.hasError('required')">
+            Senha é obrigatória
+          </mat-error>
+        </mat-form-field>
+
+        <!-- BOTÃO -->
+        <button
+          mat-raised-button
+          class="full-width btn-login"
+          #btnEntrar
+          [disabled]="loginForm.invalid || carregando"
+          type="submit"
+        >
+          {{ carregando ? 'Entrando...' : 'Entrar' }}
+        </button>
+      </form>
+    </mat-card-content>
+
+    <mat-card-footer>
+      <p class="hint-text">
+        💡 Use as credenciais fornecidas pelo administrador
+      </p>
+    </mat-card-footer>
+  </mat-card>
+</div>

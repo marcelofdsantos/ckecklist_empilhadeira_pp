@@ -1,0 +1,38 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.login-card {
+  width: 390px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* LOGO */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-animada {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* BOTÃO AZUL */
+.btn-login:hover {
+  background-color: #1565c0;
+}
+
+.btn-login:disabled {
+  background-color: #0e2ebb;
+  color: #ffffff;
+}

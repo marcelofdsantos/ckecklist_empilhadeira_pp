@@ -1,0 +1,38 @@
+# ─── Backend ──────────────────────────────────────────────────
+backend/target/
+*.class
+*.jar
+*.war
+
+# ─── Frontend ─────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# ─── IDE ──────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ─── OS ───────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Env ──────────────────────────────────────────────────────
+.env
+.env.local
+*.env
+
+# Secrets — nunca commitar
+.env
+
+# Railway secrets — nunca commitar
+backend/.env.railway
+.env.railway
+
+# Maven build output
+backend/target/

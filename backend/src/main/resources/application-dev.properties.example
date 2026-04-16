@@ -1,0 +1,30 @@
+# ========================================
+# CONFIGURAÇÕES DE DESENVOLVIMENTO
+# ========================================
+
+# Este arquivo sobrescreve configurações do application.properties em ambiente de desenvolvimento
+# Para usar: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+
+# Servidor
+server.port=8080
+
+# Banco de dados local
+spring.datasource.url=jdbc:postgresql://localhost:5432/checklist_db_dev
+spring.datasource.username=postgres
+spring.datasource.password=admin
+
+# JPA/Hibernate - Criar/recriar tabelas a cada execução
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+# Logging mais verboso
+logging.level.root=DEBUG
+logging.level.com.deicmar=TRACE
+logging.level.org.springframework.web=DEBUG
+logging.level.org.springframework.security=TRACE
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+
+# JWT com tempo de expiração menor para testes
+jwt.expiration=3600000

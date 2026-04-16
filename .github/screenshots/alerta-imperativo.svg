@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <defs>
+    <filter id="shadow3" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#F8F9FA"/>
+
+  <!-- Browser chrome -->
+  <rect x="40" y="10" width="820" height="500" rx="12" fill="white" filter="url(#shadow3)"/>
+  <rect x="40" y="10" width="820" height="44" rx="12" fill="#F1F3F5"/>
+  <rect x="40" y="42" width="820" height="12" fill="#F1F3F5"/>
+  <circle cx="68" cy="32" r="6" fill="#FF5F57"/>
+  <circle cx="88" cy="32" r="6" fill="#FFBD2E"/>
+  <circle cx="108" cy="32" r="6" fill="#28C840"/>
+  <rect x="200" y="21" width="380" height="22" rx="11" fill="white"/>
+  <text x="390" y="36" font-family="Arial, sans-serif" font-size="12" fill="#6C757D" text-anchor="middle">localhost/checklist</text>
+
+  <!-- Page bg -->
+  <rect x="40" y="54" width="820" height="456" fill="#F8F9FA"/>
+
+  <!-- Section: Impeditivos with non-conform item -->
+  <rect x="80" y="70" width="740" height="170" rx="8" fill="#FFF8E7" stroke="#FF9800" stroke-width="2"/>
+  <text x="100" y="96" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E65100">4. Itens Impeditivos ⚠️</text>
+  <text x="100" y="114" font-family="Arial, sans-serif" font-size="11" fill="#F57C00">🚫 Item não conforme BLOQUEIA a empilhadeira</text>
+
+  <!-- Item OK -->
+  <rect x="96" y="122" width="712" height="28" rx="4" fill="#FFF3E0"/>
+  <text x="102" y="141" font-family="Arial, sans-serif" font-size="12" fill="#212529">1. Direção</text>
+  <circle cx="680" cy="136" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="136" r="3" fill="#1976D2"/>
+  <text x="692" y="140" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+
+  <!-- Item NAO_CONFORME -->
+  <rect x="96" y="154" width="712" height="40" rx="4" fill="#FFEBEE" stroke="#EF5350" stroke-width="1"/>
+  <text x="102" y="171" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#C62828">2. Cinto de segurança</text>
+  <!-- Warning icon pulsing -->
+  <text x="295" y="171" font-family="Arial, sans-serif" font-size="12" fill="#F44336">⚠</text>
+  <circle cx="660" cy="165" r="6" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="672" y="169" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">OK</text>
+  <circle cx="720" cy="165" r="6" fill="#F44336" stroke="#F44336" stroke-width="2"/>
+  <circle cx="720" cy="165" r="3" fill="white"/>
+  <text x="732" y="169" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#C62828">Não Conforme</text>
+  <!-- Observação field -->
+  <rect x="108" y="178" width="500" height="12" rx="2" fill="white" stroke="#EF9A9A" stroke-width="1"/>
+  <text x="114" y="188" font-family="Arial, sans-serif" font-size="10" fill="#9E9E9E">Cinto com fecho danificado</text>
+
+  <!-- Item 3 -->
+  <line x1="96" y1="198" x2="808" y2="198" stroke="#FFE0B2" stroke-width="1"/>
+  <text x="102" y="215" font-family="Arial, sans-serif" font-size="12" fill="#212529">3. Extintor de incêndio</text>
+  <circle cx="680" cy="211" r="6" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <circle cx="680" cy="211" r="3" fill="#1976D2"/>
+  <text x="692" y="215" font-family="Arial, sans-serif" font-size="11" fill="#212529">OK</text>
+
+  <!-- ALERT BANNER -->
+  <rect x="80" y="256" width="740" height="86" rx="8" fill="#FFEBEE" stroke="#F44336" stroke-width="2"/>
+  <!-- Warning icon large -->
+  <rect x="100" y="276" width="44" height="44" rx="22" fill="#FFCDD2"/>
+  <text x="122" y="304" font-family="Arial, sans-serif" font-size="24" fill="#C62828" text-anchor="middle">⚠</text>
+  <!-- Alert text -->
+  <text x="158" y="282" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">⚠️ ATENÇÃO!</text>
+  <text x="158" y="302" font-family="Arial, sans-serif" font-size="12" fill="#B71C1C">Existem itens impeditivos não conformes.</text>
+  <text x="158" y="320" font-family="Arial, sans-serif" font-size="12" fill="#B71C1C">A empilhadeira será <tspan font-weight="bold">BLOQUEADA</tspan> automaticamente após salvar.</text>
+
+  <!-- Section 5: Observação -->
+  <rect x="80" y="356" width="740" height="68" rx="8" fill="white" filter="url(#shadow3)"/>
+  <text x="100" y="376" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#212529">5. Observação Geral (Opcional)</text>
+  <rect x="96" y="384" width="712" height="28" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="108" y="402" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD">Observações adicionais...</text>
+
+  <!-- Save button (disabled state due to alert) -->
+  <rect x="305" y="438" width="290" height="44" rx="4" fill="#1565C0"/>
+  <text x="450" y="464" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">💾  Salvar Checklist</text>
+
+  <!-- Snackbar toast at bottom -->
+  <rect x="260" y="476" width="380" height="32" rx="4" fill="#323232"/>
+  <text x="340" y="496" font-family="Arial, sans-serif" font-size="12" fill="white">🚫 Checklist REPROVADO! Empilhadeira bloqueada.</text>
+
+  <text x="450" y="512" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">Alerta de item impeditivo não conforme — bloqueio automático</text>
+</svg>

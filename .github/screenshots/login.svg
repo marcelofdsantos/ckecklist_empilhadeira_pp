@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#00000020"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="#F8F9FA"/>
+
+  <!-- Browser chrome -->
+  <rect x="60" y="20" width="780" height="560" rx="12" fill="white" filter="url(#shadow)"/>
+  <rect x="60" y="20" width="780" height="44" rx="12" fill="#F1F3F5"/>
+  <rect x="60" y="52" width="780" height="12" fill="#F1F3F5"/>
+  <!-- Browser dots -->
+  <circle cx="88" cy="42" r="6" fill="#FF5F57"/>
+  <circle cx="108" cy="42" r="6" fill="#FFBD2E"/>
+  <circle cx="128" cy="42" r="6" fill="#28C840"/>
+  <!-- URL bar -->
+  <rect x="200" y="31" width="380" height="22" rx="11" fill="white"/>
+  <text x="390" y="46" font-family="Arial, sans-serif" font-size="12" fill="#6C757D" text-anchor="middle">localhost</text>
+
+  <!-- Page content area -->
+  <rect x="60" y="64" width="780" height="516" fill="white"/>
+
+  <!-- Login card -->
+  <rect x="305" y="90" width="290" height="470" rx="8" fill="white" filter="url(#shadow)"/>
+
+  <!-- Logo area / video placeholder -->
+  <rect x="315" y="100" width="270" height="120" rx="6" fill="#1A1A2E"/>
+  <text x="450" y="152" font-family="Arial, sans-serif" font-size="11" fill="#8888AA" text-anchor="middle">[ Animação do Logo ]</text>
+  <text x="450" y="170" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#4A9EFF" text-anchor="middle">DEICMAR</text>
+  <text x="450" y="190" font-family="Arial, sans-serif" font-size="10" fill="#6666AA" text-anchor="middle">SISTEMAS INDUSTRIAIS</text>
+
+  <!-- Card header -->
+  <text x="328" y="244" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#212529">Login</text>
+  <text x="328" y="264" font-family="Arial, sans-serif" font-size="11" fill="#6C757D">Sistema de Checklist de Empilhadeiras</text>
+
+  <!-- RE field -->
+  <text x="328" y="296" font-family="Arial, sans-serif" font-size="11" fill="#495057">RE</text>
+  <rect x="320" y="302" width="258" height="40" rx="4" fill="white" stroke="#1976D2" stroke-width="2"/>
+  <text x="336" y="327" font-family="Arial, sans-serif" font-size="13" fill="#212529">OPR001</text>
+
+  <!-- Senha field -->
+  <text x="328" y="364" font-family="Arial, sans-serif" font-size="11" fill="#495057">Senha</text>
+  <rect x="320" y="370" width="258" height="40" rx="4" fill="white" stroke="#CED4DA" stroke-width="1.5"/>
+  <text x="336" y="395" font-family="Arial, sans-serif" font-size="14" fill="#6C757D">••••••••</text>
+
+  <!-- Button -->
+  <rect x="320" y="428" width="258" height="44" rx="4" fill="#1976D2"/>
+  <text x="449" y="455" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Entrar</text>
+
+  <!-- Hint text -->
+  <text x="449" y="500" font-family="Arial, sans-serif" font-size="11" fill="#6C757D" text-anchor="middle">💡 Use as credenciais fornecidas pelo administrador</text>
+
+  <!-- Label -->
+  <rect x="68" y="572" width="130" height="0" fill="none"/>
+  <text x="450" y="590" font-family="Arial, sans-serif" font-size="11" fill="#ADB5BD" text-anchor="middle">Tela de Login — Sistema de Checklist de Empilhadeiras</text>
+</svg>

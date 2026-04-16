@@ -1,0 +1,167 @@
+.admin-container {
+  padding: 16px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.admin-header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 12px 0 0;
+}
+.header-left { display: flex; align-items: center; gap: 12px; }
+.header-right { display: flex; align-items: center; gap: 10px; }
+.ultima-atualizacao { font-size: 12px; color: #888; }
+.usuario-nome { font-size: 14px; font-weight: 500; }
+
+.perfil-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.perfil-badge.admin             { background: #EDE9FE; color: #4C1D95; }
+.perfil-badge.gerente_mecanica  { background: #FEF3C7; color: #92400E; }
+.perfil-badge.supervisor_operacional { background: #D1FAE5; color: #065F46; }
+.perfil-badge.supervisor        { background: #DBEAFE; color: #1E40AF; }
+
+/* ── Alertas ── */
+.alertas-container {
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+.alerta-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #C2410C;
+  margin-bottom: 6px;
+}
+.alerta-header mat-icon { font-size: 16px; width: 16px; height: 16px; }
+.alerta-item { font-size: 12px; color: #7C2D12; padding: 2px 0; }
+.alerta-novo { font-weight: 500; }
+
+/* ── Resumo grid ── */
+.resumo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.resumo-card {
+  padding: 16px;
+  text-align: center;
+  cursor: default;
+}
+.resumo-card mat-icon { font-size: 28px; width: 28px; height: 28px; margin-bottom: 6px; }
+.resumo-valor { font-size: 32px; font-weight: 500; line-height: 1.1; }
+.resumo-label { font-size: 12px; color: #6B7280; margin-top: 4px; }
+
+.card-verde  mat-icon, .card-verde  .resumo-valor { color: #059669; }
+.card-vermelho mat-icon, .card-vermelho .resumo-valor { color: #DC2626; }
+.card-azul   mat-icon, .card-azul   .resumo-valor { color: #2563EB; }
+.card-laranja mat-icon, .card-laranja .resumo-valor { color: #D97706; }
+.card-roxo   mat-icon, .card-roxo   .resumo-valor { color: #7C3AED; }
+.card-cinza  mat-icon, .card-cinza  .resumo-valor { color: #6B7280; }
+
+/* ── Painéis ── */
+.paineis-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 16px;
+  align-items: start;
+}
+.painel-card { margin-bottom: 16px; }
+.painel-card mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+.painel-card mat-card-title mat-icon { font-size: 20px; width: 20px; height: 20px; }
+.painel-direito { display: flex; flex-direction: column; gap: 16px; }
+.full-width { width: 100%; }
+
+/* ── Tabela empilhadeiras ── */
+.status-chip {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.status-chip.disponivel { background: #D1FAE5; color: #065F46; }
+.status-chip.bloqueada  { background: #FEE2E2; color: #991B1B; }
+.status-chip.inativa    { background: #F3F4F6; color: #6B7280; }
+.motivo-bloqueio { font-size: 11px; color: #B91C1C; margin-top: 2px; }
+.resultado-ok  { color: #059669; font-weight: 500; font-size: 12px; }
+.resultado-nok { color: #DC2626; font-weight: 500; font-size: 12px; }
+.sem-dados { color: #9CA3AF; font-size: 12px; }
+.row-bloqueada { background: #FFF5F5; }
+
+/* ── Turno grid ── */
+.turno-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.turno-card {
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+.turno-card.manha  { background: #FEF9C3; }
+.turno-card.tarde  { background: #FED7AA; }
+.turno-card.noite  { background: #E0E7FF; }
+.turno-nome  { font-size: 11px; color: #6B7280; margin-bottom: 4px; }
+.turno-total { font-size: 28px; font-weight: 500; }
+.turno-detalhes { display: flex; justify-content: center; gap: 10px; font-size: 12px; margin-top: 4px; }
+.turno-detalhes .aprovado  { color: #059669; }
+.turno-detalhes .reprovado { color: #DC2626; }
+
+/* ── Últimas vistorias ── */
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+.checklist-item:last-child { border-bottom: none; }
+.checklist-info { display: flex; flex-direction: column; gap: 2px; }
+.checklist-modelo  { font-size: 13px; font-weight: 500; }
+.checklist-operador { font-size: 11px; color: #6B7280; }
+.checklist-meta { display: flex; align-items: center; gap: 8px; }
+.checklist-hora { font-size: 11px; color: #9CA3AF; }
+.resultado-badge {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: 8px;
+}
+.resultado-badge.aprovado  { background: #D1FAE5; color: #065F46; }
+.resultado-badge.reprovado { background: #FEE2E2; color: #991B1B; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .paineis-grid { grid-template-columns: 1fr; }
+  .resumo-grid  { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .resumo-grid  { grid-template-columns: repeat(2, 1fr); }
+  .admin-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+}

@@ -1,0 +1,189 @@
+<div class="admin-container">
+
+  <!-- Header -->
+  <div class="admin-header">
+    <div class="header-left">
+      <h1>Painel Administrativo</h1>
+      <span class="perfil-badge" [ngClass]="perfil?.toLowerCase()">{{ labelPerfil }}</span>
+    </div>
+    <div class="header-right">
+      <span class="ultima-atualizacao">Atualizado: {{ ultimaAtualizacao | date:'HH:mm:ss' }}</span>
+      <button mat-icon-button (click)="carregarTudo()" matTooltip="Atualizar" class="refresh-btn">
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <span class="usuario-nome">{{ nomeUsuario }}</span>
+      <button mat-icon-button (click)="logout()" matTooltip="Sair">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Alertas em tempo real -->
+  <div class="alertas-container" *ngIf="alertasVivos.length > 0">
+    <div class="alerta-header">
+      <mat-icon>notifications_active</mat-icon>
+      <span>Alertas em tempo real</span>
+    </div>
+    <div class="alerta-item" *ngFor="let alerta of alertasVivos; let i = index"
+         [class.alerta-novo]="i === 0">
+      {{ alerta }}
+    </div>
+  </div>
+
+  <!-- Cards de resumo -->
+  <div class="resumo-grid" *ngIf="resumo">
+    <mat-card class="resumo-card card-verde">
+      <mat-icon>check_circle</mat-icon>
+      <div class="resumo-valor">{{ resumo.empilhadeirasDisponiveis }}</div>
+      <div class="resumo-label">Empilhadeiras disponíveis</div>
+    </mat-card>
+    <mat-card class="resumo-card card-vermelho">
+      <mat-icon>lock</mat-icon>
+      <div class="resumo-valor">{{ resumo.empilhadeirasBloqueadas }}</div>
+      <div class="resumo-label">Empilhadeiras bloqueadas</div>
+    </mat-card>
+    <mat-card class="resumo-card card-azul">
+      <mat-icon>assignment</mat-icon>
+      <div class="resumo-valor">{{ resumo.checklistsHoje }}</div>
+      <div class="resumo-label">Checklists hoje</div>
+    </mat-card>
+    <mat-card class="resumo-card card-laranja">
+      <mat-icon>warning</mat-icon>
+      <div class="resumo-valor">{{ resumo.checklistsReprovadosHoje }}</div>
+      <div class="resumo-label">Reprovados hoje</div>
+    </mat-card>
+    <mat-card class="resumo-card card-roxo">
+      <mat-icon>people</mat-icon>
+      <div class="resumo-valor">{{ resumo.operadoresAtivos }}</div>
+      <div class="resumo-label">Operadores ativos</div>
+    </mat-card>
+    <mat-card class="resumo-card card-cinza">
+      <mat-icon>inventory</mat-icon>
+      <div class="resumo-valor">{{ resumo.totalEmpilhadeiras }}</div>
+      <div class="resumo-label">Total de equipamentos</div>
+    </mat-card>
+  </div>
+
+  <div class="paineis-grid">
+
+    <!-- Painel empilhadeiras (ADMIN + GERENTE_MECANICA) -->
+    <mat-card class="painel-card" *ngIf="empilhadeiras.length >= 0">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon>forklift</mat-icon>
+          {{ podeVerTodasEmpilhadeiras() ? 'Status das Empilhadeiras' : 'Empilhadeiras Bloqueadas' }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="empilhadeiras" class="mat-elevation-z0 full-width">
+
+          <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef>Equipamento</th>
+            <td mat-cell *matCellDef="let e">
+              <strong>{{ e.modelo }}</strong><br>
+              <small>{{ e.tipo }} · {{ e.capacidade }}kg</small>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef>Tipo</th>
+            <td mat-cell *matCellDef="let e">{{ e.tipo }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="capacidade">
+            <th mat-header-cell *matHeaderCellDef>Capacidade</th>
+            <td mat-cell *matCellDef="let e">{{ e.capacidade | number }}kg</td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let e">
+              <span class="status-chip" [ngClass]="statusColor(e.status)">
+                {{ e.status === 'DISPONIVEL' ? 'Disponível' : e.status === 'BLOQUEADA' ? 'Bloqueada' : 'Inativa' }}
+              </span>
+              <div *ngIf="e.motivoBloqueio" class="motivo-bloqueio">{{ e.motivoBloqueio }}</div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="ultimoChecklist">
+            <th mat-header-cell *matHeaderCellDef>Último checklist</th>
+            <td mat-cell *matCellDef="let e">
+              <ng-container *ngIf="e.ultimoChecklistData; else semChecklist">
+                <span [ngClass]="e.ultimoChecklistResultado === 'APROVADO' ? 'resultado-ok' : 'resultado-nok'">
+                  {{ e.ultimoChecklistResultado }}
+                </span>
+                <br><small>{{ e.ultimoChecklistData }} · {{ e.ultimoOperador }}</small>
+              </ng-container>
+              <ng-template #semChecklist><small class="sem-dados">Nenhum</small></ng-template>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="acoes">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let e">
+              <button mat-icon-button color="primary"
+                      *ngIf="e.status === 'BLOQUEADA' && podeDesbloquear()"
+                      (click)="desbloquear(e.id, e.modelo)"
+                      matTooltip="Desbloquear equipamento">
+                <mat-icon>lock_open</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="colunasEmpilhadeiras"></tr>
+          <tr mat-row *matRowDef="let row; columns: colunasEmpilhadeiras;"
+              [ngClass]="{'row-bloqueada': row.status === 'BLOQUEADA'}"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Painel direito: checklists por turno + recentes -->
+    <div class="painel-direito" *ngIf="podeVerChecklists()">
+
+      <!-- Checklists por turno (hoje) -->
+      <mat-card class="painel-card painel-turno">
+        <mat-card-header>
+          <mat-card-title><mat-icon>bar_chart</mat-icon> Checklists por turno — hoje</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="turno-grid">
+            <div class="turno-card" *ngFor="let t of checklistsPorTurno" [ngClass]="turnoColor(t.turno)">
+              <div class="turno-nome">{{ t.turno }}</div>
+              <div class="turno-total">{{ t.total }}</div>
+              <div class="turno-detalhes">
+                <span class="aprovado">✓ {{ t.aprovados }}</span>
+                <span class="reprovado">✗ {{ t.reprovados }}</span>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Últimos checklists -->
+      <mat-card class="painel-card">
+        <mat-card-header>
+          <mat-card-title><mat-icon>history</mat-icon> Últimas vistorias</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="checklist-item" *ngFor="let c of checklistsRecentes">
+            <div class="checklist-info">
+              <span class="checklist-modelo">{{ c.empilhadeiraModelo }}</span>
+              <span class="checklist-operador">{{ c.operadorNome }}</span>
+            </div>
+            <div class="checklist-meta">
+              <span class="checklist-hora">{{ c.horaVistoria?.substring(0, 5) }}</span>
+              <span class="resultado-badge" [ngClass]="c.resultado === 'APROVADO' ? 'aprovado' : 'reprovado'">
+                {{ c.resultado }}
+              </span>
+            </div>
+          </div>
+          <div *ngIf="checklistsRecentes.length === 0" class="sem-dados">
+            Nenhuma vistoria hoje ainda.
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+
+  </div>
+</div>
